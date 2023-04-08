@@ -19,7 +19,7 @@ let myInit = {method: 'GET',
 
 
 let myRequest = new Request("./scifi.json", myInit);
-//testing repository
+
 
 
 
