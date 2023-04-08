@@ -27,7 +27,19 @@ class MyBookCard extends Component {
        
       </Card.Body>
     </Card>
-  );
+  )
 }
+/*
+need to get authorization code from link in assignment
+*/
+  componentDidMount = async () => {
+    const resp = await fetch("https://striveschool-api.herokuapp.com/api/comments/" + this.props.bookInfo.asin, {
+       headers: {'Authorizaton': "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NDFjMzg4N2E0YmFhODAwMTNlODQ5NTgiLCJpYXQiOjE2ODA5NjMxNjksImV4cCI6MTY4MjE3Mjc2OX0.KT5AEy-tUYRLPopX-w-DHrxiUaXq3pGHzrOHJzAFg3Y"
+      }
+      })
+
+  }
+
+
 }
 export default MyBookCard;
