@@ -21,7 +21,7 @@ class MyBookCard extends Component {
       <Card.Body>
         <Card.Title>{this.props.item.title}</Card.Title>
         <Card.Text>
-         {this.props.item.category} - {this.props.item.price} 
+         {this.props.item.category} - ${this.props.item.price} 
           <CommentList />
         </Card.Text>
        
