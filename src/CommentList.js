@@ -11,7 +11,7 @@ class CommentList extends Component {
     render() {
         return (
           <ul>
-            {this.props.comments && this.props.comments.map(comment => <CommentListItem comment={comment} /> )}
+            {this.props.comments && this.props.comments.map(comment => <CommentListItem key={comment._id} comment={comment} /> )}
 
           </ul>
         )

@@ -22,9 +22,9 @@ class MyBookCard extends Component {
         <Card.Title>{this.props.item.title}</Card.Title>
         <Card.Text>
          {this.props.item.category} - ${this.props.item.price} 
-          <CommentList />
+          <CommentList comments={this.state.comments} />
         </Card.Text>
-       
+        <CommentList comments={this.state.comments} />
       </Card.Body>
     </Card>
   )
@@ -37,6 +37,13 @@ need to get authorization code from link in assignment
        headers: {'Authorizaton': "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NDFjMzg4N2E0YmFhODAwMTNlODQ5NTgiLCJpYXQiOjE2ODA5NjMxNjksImV4cCI6MTY4MjE3Mjc2OX0.KT5AEy-tUYRLPopX-w-DHrxiUaXq3pGHzrOHJzAFg3Y"
       }
       })
+
+      const retrievedComments = await resp.json();
+      this.setState({
+          comments: retrievedComments
+      })
+
+      
 
   }
 
