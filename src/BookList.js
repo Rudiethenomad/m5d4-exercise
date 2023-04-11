@@ -50,7 +50,12 @@ class BookList extends Component {
                 
                 <Fragment>
                 <Row>
-                     <MyNav />
+                     <MyNav 
+                     placeholder="Search"
+                     value={this.state.value}
+                     onChange={(e)=> this.setStaate({ search: e.currentTarget.value.toLowerCase() })}
+                     
+                     />
                 </Row>
                 
                 <Row>

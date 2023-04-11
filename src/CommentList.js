@@ -12,9 +12,11 @@ class CommentList extends Component {
     render() {
         return (
           <Fragment>
-            <FormControl value={this.state.commentFilter} onChange={(e) => this.setState({ commentFilter: e.currentTarget.value })}></FormControl>
+            <FormControl value={this.state.commentFilter} onChange={(e) => this.setState({ commentFilter: e.currentTarget.value.toLowerCase() })}></FormControl>
           <ul>
-            {this.props.comments && this.props.comments.map(comment => <CommentListItem key={comment._id} comment={comment} /> )}
+            {this.props.comments && this.props.comments
+            .filter(comment => comment.comment.toLowerCase().indexOf(this.state.commentFilter) !== -1)
+            .map(comment => <CommentListItem key={comment._id} comment={comment} /> )}
 
           </ul>
           </Fragment>
